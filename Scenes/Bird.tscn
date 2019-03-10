@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Bird.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Player/Fly0.png" type="Texture" id=2]
+
+[node name="Bird" type="KinematicBody2D" index="0"]
+
+position = Vector2( 0, 128 )
+scale = Vector2( 0.5, 0.5 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform", "Z Index", "collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
+
+position = Vector2( 32, 32 )
+scale = Vector2( 0.390625, 0.390625 )
+build_mode = 0
+polygon = PoolVector2Array( -69.5685, -20.2567, -58.0498, -35.385, -41.8456, -51.0665, -32.9594, -53.9415, -30.7477, -76.8429, -25.38, -83.475, -12.312, -83.9977, -6.82349, -82.9523, -2.90311, -83.2137, 11.733, -82.9523, 17.2215, -76.941, 17.4829, -53.6801, 29.7864, -47.2338, 46.8939, -29.4683, 56.0991, -17.71, 57.8768, -9.88794, 58.5879, -1.71039, 77.3445, 0.299683, 84.1872, 8.24493, 84.8983, 28.1555, 76.908, 36.9671, 53.7726, 37.4037, 41.9866, 51.8087, 30.6372, 57.92, 14.0495, 57.92, 12.74, 71.452, 0.0809937, 84.9839, -47.9359, 84.9839, -57.9758, 69.7059, -61.0314, 49.6261, -75.4364, 33.0385, -82.7281, 20.5381, -82.5024, 2.7782, -77.9131, -9.77179 )
+
+[node name="Area2D" type="Area2D" parent="." index="1"]
+
+position = Vector2( 32, 32 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" index="0"]
+
+position = Vector2( 0, 7.62939e-06 )
+scale = Vector2( 0.390625, 0.390625 )
+build_mode = 0
+polygon = PoolVector2Array( -69.5685, -20.2567, -42.5913, -49.8657, -31.4057, -53.1556, -30.7477, -76.8429, -23.5099, -82.1067, -12.3243, -82.1067, -7.06043, -76.1849, -3.11254, -82.1067, 10.705, -80.7908, 14.6529, -76.8429, 15.9689, -55.7875, 29.7864, -47.2338, 46.8939, -29.4683, 54.1317, -17.6247, 55.4476, 0.140686, 76.503, 0.798645, 80.4508, 10.6683, 81.1088, 28.4338, 75.845, 33.6976, 52.1577, 34.3556, 40.9721, 49.4892, 28.4705, 54.7529, 10.705, 55.4109, 9.38906, 71.2025, -1.7966, 81.7302, -44.5652, 80.4142, -55.7509, 70.5445, -57.0669, 47.5152, -74.1743, 30.4078, -82.7281, 20.5381, -82.5024, 2.7782 )
+
+[node name="Flappy" type="Sprite" parent="." index="2"]
+
+texture = ExtResource( 2 )
+centered = false
+_sections_unfolded = [ "Animation", "Offset" ]
+
+[node name="Camera2D" type="Camera2D" parent="." index="3"]
+
+position = Vector2( 32, 96 )
+scale = Vector2( 1, 3 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000012
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = false
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.0
+drag_margin_top = 1.0
+drag_margin_right = 0.0
+drag_margin_bottom = 1.0
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing" ]
+
+
